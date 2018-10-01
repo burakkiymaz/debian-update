@@ -1,0 +1,29 @@
+#! /bin/bash
+echo -e '\e[01;96m--------------------------------------------------------------------------------'
+echo -e '                            System Update Tool'
+echo -e '--------------------------------------------------------------------------------'
+echo
+echo -e '\033[01;31mSystem Updating ...'
+echo -e '\e[0;39m'
+sudo apt-get -y update
+echo
+echo -e '\033[01;92m[ + ] \e[0;39mDONE !' 
+echo -e '\033[0;90m######################################################################'
+echo -e '\033[01;31mSystem Upgrading ...'
+echo -e '\e[0;39m'
+sudo apt-get -y upgrade
+echo -e '\033[01;92m[ + ] \e[0;39mDONE !' 
+if [[ "$1" == "-d" ]];
+	then
+	echo -e '\033[0;90m######################################################################'
+	echo -e '\033[01;31mChecking distrubition upgrade ...'
+	echo -e '\e[0;39m'
+	echo
+	sudo apt-get -y dist-upgrade
+	echo
+	echo -e '\e[01;92m[ + ] \e[039mDONE !'
+fi
+
+echo
+echo -e '\033[01;96mYour system is up to date.. See you on next update :)'
+
